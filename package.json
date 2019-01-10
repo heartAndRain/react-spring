@@ -5,7 +5,6 @@
   "main": "web.cjs.js",
   "module": "web.js",
   "react-native": "native.js",
-  "private": true,
   "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf dist",
