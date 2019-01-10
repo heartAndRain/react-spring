@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { polyfill } from 'react-lifecycles-compat'
 import Spring from './Spring'
 import Keyframes from './Keyframes'
 import { callProp, toArray, interpolateTo } from './shared/helpers'
@@ -13,7 +14,7 @@ let get = props => {
   return { items, keys: keys.map(key => String(key)), ...rest }
 }
 
-export default class Transition extends React.PureComponent {
+class Transition extends React.PureComponent {
   static propTypes = {
     /** First-render initial values, if present overrides "from" on the first render pass. It can be "null" to skip first mounting transition. Otherwise it can take an object or a function (item => object) */
     initial: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
@@ -244,3 +245,6 @@ export default class Transition extends React.PureComponent {
     )
   }
 }
+polyfill(Transition)
+
+export default Transition

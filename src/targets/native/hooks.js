@@ -30,7 +30,7 @@ Globals.injectCreateAnimatedStyle(styles =>
 
 export {
   config,
-  extendedAnimated as animated,
+  // extendedAnimated as animated,
   interpolate,
   Globals,
   useSpring,

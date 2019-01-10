@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { polyfill } from 'react-lifecycles-compat'
 import Controller from './animated/Controller'
 import * as Globals from './animated/Globals'
 import { config } from './shared/constants'
 import { convertValues, shallowEqual } from './shared/helpers'
 
-export default class Spring extends React.Component {
+class Spring extends React.Component {
   static propTypes = {
     /** Base values, optional */
     from: PropTypes.object,
@@ -173,3 +174,6 @@ export default class Spring extends React.Component {
     }
   }
 }
+polyfill(Spring)
+
+export default Spring

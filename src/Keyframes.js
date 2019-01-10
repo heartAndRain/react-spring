@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import forwardRef from 'create-react-ref/lib/forwardRef'
 import * as Globals from './animated/Globals'
 import Spring from './Spring'
 import Trail from './Trail'
@@ -124,7 +125,7 @@ class KeyframesImpl extends React.PureComponent {
   }
 }
 
-const Keyframes = React.forwardRef((props, ref) => (
+const Keyframes = forwardRef((props, ref) => (
   <KeyframesImpl {...props} forwardRef={ref} />
 ))
 

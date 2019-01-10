@@ -1,4 +1,5 @@
 import React from 'react'
+import forwardRef from 'create-react-ref/lib/forwardRef'
 import AnimatedProps from './AnimatedProps'
 import { handleRef, shallowEqual } from '../shared/helpers'
 import * as Globals from './Globals'
@@ -83,7 +84,7 @@ export default function createAnimatedComponent(Component) {
       )
     }
   }
-  return React.forwardRef((props, ref) => (
+  return forwardRef((props, ref) => (
     <AnimatedComponent {...props} forwardRef={ref} />
   ))
 }
